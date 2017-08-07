@@ -22,11 +22,12 @@ app.use((req, res, next) => {
 
 app.use(express.static(__dirname + '/public'));
 
-
-    res.render('maint.hbs', {
-       pageTitle:'The site is under maintenance!!!',
-       maintMessage: 'We are working on it. Will be back soon.' 
-    })
+app.use((req,res,next) => { 
+    // res.render('maint.hbs', {
+    //    pageTitle:'The site is under maintenance!!!',
+    //    maintMessage: 'We are working on it. Will be back soon.' 
+    // })
+    next();
 })
 
 
