@@ -39,18 +39,25 @@ return text.toUpperCase() });
 
 app.get('/', (req,res) => {
  //   res.send('<h1>Hello Express!!!</h1>');
- res.render('home.hbs', {
-     welcomeMessage:'We welcome you to our website.',
-     pageTitle: 'Our Home Page',
+//  res.render('home.hbs', {
+//      welcomeMessage:'We welcome you to our website.',
+//      pageTitle: 'Our Home Page',
 
- })
+//  })
+next();
 })
 
 app.get('/about',(req,res) => {
     res.render('about.hbs',{
-        pageTitle: 'About Page',
+        pageTitle: 'About Page'
 
     });
+})
+
+app.get('/projects',(req,res) => {
+    res.render('projects.hbs',{
+        pageTitle:'Our Projects'
+    })
 })
 
 app.get('/bad',(req,res) => {
